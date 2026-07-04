@@ -48,8 +48,8 @@
         });
     }
 
-    // Smooth scroll animation on page load
-    document.addEventListener('DOMContentLoaded', function() {
+    // Scroll animation trigger - exposed globally for router.js
+    window.triggerScrollAnimations = function() {
         // Only run observer if IntersectionObserver is supported
         if (!('IntersectionObserver' in window)) {
             // Fallback: show all elements immediately
@@ -77,6 +77,9 @@
 
         // Observe service cards
         document.querySelectorAll('.service-card').forEach(function(card) {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
             observer.observe(card);
         });
 
@@ -103,6 +106,11 @@
             item.style.transition = 'all 0.5s ease ' + (index * 0.1) + 's';
             observer.observe(item);
         });
+    };
+
+    // Initialize animations on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        window.triggerScrollAnimations();
     });
 
     // Contact form submission

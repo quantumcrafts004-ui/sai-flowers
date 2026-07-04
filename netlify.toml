@@ -6,15 +6,76 @@
   # Publish directory is the root since index.html is at the root
   publish = "."
 
-# Redirect rules
+# SPA redirect: All routes serve index.html for clean URLs
 [[redirects]]
-  # Redirect root to index.html
-  from = "/"
+  from = "/wedding"
   to = "/index.html"
   status = 200
 
 [[redirects]]
-  # Custom 404 page - all unmatched routes go here
+  from = "/welcome"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/puja"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/car"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/birthday"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/allevent"
+  to = "/index.html"
+  status = 200
+
+# Redirect old .html URLs to clean URLs
+[[redirects]]
+  from = "/events/wedding.html"
+  to = "/wedding"
+  status = 301
+
+[[redirects]]
+  from = "/events/welcome.html"
+  to = "/welcome"
+  status = 301
+
+[[redirects]]
+  from = "/events/puja.html"
+  to = "/puja"
+  status = 301
+
+[[redirects]]
+  from = "/events/car.html"
+  to = "/car"
+  status = 301
+
+[[redirects]]
+  from = "/events/birthday.html"
+  to = "/birthday"
+  status = 301
+
+[[redirects]]
+  from = "/events/allevent.html"
+  to = "/allevent"
+  status = 301
+
+# Redirect root to index.html
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+# Custom 404 page - all unmatched routes go here
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
