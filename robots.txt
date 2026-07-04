@@ -1,0 +1,8 @@
+# Robots.txt - Sai Flowers
+# Disallow all bots from crawling the website
+
+User-agent: *
+Disallow: /
+
+# Sitemap location (for reference, though crawling is disallowed)
+Sitemap: https://saiflower.netlify.app/sitemap.xml
