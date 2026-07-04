@@ -10,7 +10,7 @@
         '/': { title: 'Sai Flower - Flower Shop & Event Decorations', section: 'home' },
         '/wedding': { title: 'Wedding Decoration - Sai Flower', section: 'event-wedding' },
         '/welcome': { title: 'Welcome Decoration - Sai Flower', section: 'event-welcome' },
-        '/puja': { title: 'Puja & Religious Decoration - Sai Flower', section: 'event-puja' },
+        '/puja': { title: 'Bookeh - Sai Flower', section: 'event-puja' },
         '/car': { title: 'Car Decoration - Sai Flower', section: 'event-car' },
         '/birthday': { title: 'Birthday & Party Decoration - Sai Flower', section: 'event-birthday' },
         '/allevent': { title: 'All Event Decorations - Sai Flower', section: 'event-allevent' }
