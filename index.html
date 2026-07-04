@@ -27,24 +27,26 @@
             text-align: center;
             position: relative;
             margin-top: 80px;
+            width: 100%;
+            overflow: hidden;
         }
-        .event-hero .container { position: relative; z-index: 2; }
-        .event-hero h1 { font-size: 3.5rem; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        .event-hero p { color: #fff; font-size: 1.2rem; margin-top: 15px; opacity: 0.9; }
+        .event-hero .container { position: relative; z-index: 2; width: 100%; }
+        .event-hero h1 { font-size: 3.5rem; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.3); word-break: break-word; }
+        .event-hero p { color: #fff; font-size: 1.2rem; margin-top: 15px; opacity: 0.9; word-break: break-word; }
         .event-detail { padding: 80px 0; }
         .event-detail .container { max-width: 100%; }
-        .event-detail h2 { font-size: 2rem; margin-bottom: 20px; color: var(--dark); }
-        .event-detail p { color: var(--text); margin-bottom: 15px; line-height: 1.8; }
+        .event-detail h2 { font-size: 2rem; margin-bottom: 20px; color: var(--dark); word-break: break-word; }
+        .event-detail p { color: var(--text); margin-bottom: 15px; line-height: 1.8; word-break: break-word; }
         .event-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
-        .event-gallery img { width: 100%; height: 280px; object-fit: cover; border-radius: 12px; transition: transform 0.3s ease; }
+        .event-gallery img { width: 100%; max-width: 100%; height: 280px; object-fit: cover; border-radius: 12px; transition: transform 0.3s ease; }
         .event-gallery img:hover { transform: scale(1.03); }
         .event-cta { text-align: center; margin-top: 50px; padding: 40px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 20px; color: #fff; }
-        .event-cta h3 { color: #fff; font-size: 1.8rem; margin-bottom: 15px; }
-        .event-cta p { color: #fff; opacity: 0.9; margin-bottom: 20px; }
-        .back-link { display: inline-block; margin-top: 30px; color: var(--primary); text-decoration: none; font-weight: 500; }
+        .event-cta h3 { color: #fff; font-size: 1.8rem; margin-bottom: 15px; word-break: break-word; }
+        .event-cta p { color: #fff; opacity: 0.9; margin-bottom: 20px; word-break: break-word; }
+        .back-link { display: inline-block; margin-top: 30px; color: var(--primary); text-decoration: none; font-weight: 500; word-break: break-word; }
         .back-link i { margin-right: 8px; }
         .events-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; margin: 30px 0; }
-        .events-list a { display: block; padding: 25px; background: var(--light); border-radius: 15px; text-decoration: none; color: var(--dark); border-left: 4px solid var(--primary); transition: var(--transition); }
+        .events-list a { display: block; padding: 25px; background: var(--light); border-radius: 15px; text-decoration: none; color: var(--dark); border-left: 4px solid var(--primary); transition: var(--transition); word-break: break-word; }
         .events-list a:hover { transform: translateX(5px); box-shadow: var(--shadow); }
         .events-list a h4 { margin-bottom: 8px; }
         .events-list a p { font-size: .9rem; color: var(--text); margin: 0; }
@@ -55,6 +57,7 @@
             .event-gallery img { height: 240px; }
         }
         @media (max-width: 767px) {
+            .event-hero { margin-top: 70px; }
             .event-hero h1 { font-size: 2.2rem; }
             .event-hero p { font-size: 1rem; }
             .event-detail { padding: 50px 0; }
@@ -64,10 +67,25 @@
             .event-cta { padding: 30px 20px; }
             .event-cta h3 { font-size: 1.4rem; }
             .events-list { grid-template-columns: 1fr; }
+            .events-list a { padding: 20px; }
         }
         @media (max-width: 480px) {
+            .event-hero { margin-top: 60px; min-height: 50vh; }
             .event-hero h1 { font-size: 1.8rem; }
+            .event-hero p { font-size: 0.95rem; }
             .event-gallery img { height: 200px; }
+            .event-detail h2 { font-size: 1.4rem; }
+            .event-cta { padding: 25px 15px; }
+            .event-cta h3 { font-size: 1.2rem; }
+            .events-list a { padding: 15px; }
+        }
+        @media (max-width: 360px) {
+            .event-hero h1 { font-size: 1.5rem; }
+            .event-hero p { font-size: 0.85rem; }
+            .event-gallery { gap: 12px; }
+            .event-gallery img { height: 180px; }
+            .event-cta { padding: 20px 12px; border-radius: 12px; }
+            .back-link { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -162,47 +180,40 @@
                     <p class="section-subtitle">We provide beautiful flower decorations for every occasion</p>
                 </div>
                 <div class="services-grid">
-                    <a href="/wedding" class="service-card">
-                        <div class="service-icon">
+                    <a href="/wedding" class="service-card" style="background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1)), url('wedding decoration/wedding1.jpg') center/cover no-repeat;">
+                        <div class="service-icon" style="background: rgba(255,255,255,0.9);">
                             <i class="fas fa-ring" aria-hidden="true"></i>
                         </div>
-                        <h3>Wedding Decoration</h3>
-                        <p>Make your special day unforgettable with our elegant wedding floral arrangements. From bridal bouquets to mandap decorations, we create a dreamy atmosphere.</p>
+                        <h3 style="color: #fff;">Wedding Decoration</h3>
+                        <p style="color: rgba(255,255,255,0.9);">Make your special day unforgettable with our elegant wedding floral arrangements. From bridal bouquets to mandap decorations, we create a dreamy atmosphere.</p>
                     </a>
-                    <a href="/welcome" class="service-card">
-                        <div class="service-icon">
+                    <a href="/welcome" class="service-card" style="background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1)), url('Welcome decoration/welcome1.webp') center/cover no-repeat;">
+                        <div class="service-icon" style="background: rgba(255,255,255,0.9);">
                             <i class="fas fa-hand-peace" aria-hidden="true"></i>
                         </div>
-                        <h3>Welcome Decoration</h3>
-                        <p>Greet your guests with warmth and beauty. Our welcome decorations set the perfect tone for any event with stunning floral displays and creative setups.</p>
+                        <h3 style="color: #fff;">Welcome Decoration</h3>
+                        <p style="color: rgba(255,255,255,0.9);">Greet your guests with warmth and beauty. Our welcome decorations set the perfect tone for any event with stunning floral displays and creative setups.</p>
                     </a>
-                    <a href="/puja" class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-om" aria-hidden="true"></i>
+                    <a href="/puja" class="service-card" style="background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1)), url('Bookeh/bookeh1.jpg') center/cover no-repeat;">
+                        <div class="service-icon" style="background: rgba(255,255,255,0.9);">
+                            <i class="fas fa-leaf" aria-hidden="true"></i>
                         </div>
-                        <h3>Bookeh</h3>
-                        <p>Enhance your spiritual ceremonies with traditional and sacred flower arrangements. We provide decorations for all religious occasions and pujas.</p>
+                        <h3 style="color: #fff;">Bookeh</h3>
+                        <p style="color: rgba(255,255,255,0.9);">Enhance your spiritual ceremonies with traditional and sacred flower arrangements. We provide decorations for all religious occasions and pujas.</p>
                     </a>
-                    <a href="/car" class="service-card">
-                        <div class="service-icon">
+                    <a href="/car" class="service-card" style="background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1)), url('car decoration/car1.jpg') center/cover no-repeat;">
+                        <div class="service-icon" style="background: rgba(255,255,255,0.9);">
                             <i class="fas fa-car" aria-hidden="true"></i>
                         </div>
-                        <h3>Car Decoration</h3>
-                        <p>Make your ride stand out with our beautiful car decorations. Perfect for weddings, processions, and special celebrations.</p>
+                        <h3 style="color: #fff;">Car Decoration</h3>
+                        <p style="color: rgba(255,255,255,0.9);">Make your ride stand out with our beautiful car decorations. Perfect for weddings, processions, and special celebrations.</p>
                     </a>
-                    <a href="/birthday" class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-birthday-cake" aria-hidden="true"></i>
-                        </div>
-                        <h3>Birthday & Party Decoration</h3>
-                        <p>Celebrate life's joyful moments with vibrant and fun floral decorations. We create the perfect party atmosphere for birthdays and special occasions.</p>
-                    </a>
-                    <a href="/allevent" class="service-card">
-                        <div class="service-icon">
+                    <a href="/allevent" class="service-card" style="background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.1)), url('wedding decoration/wedding5.jpg') center/cover no-repeat;">
+                        <div class="service-icon" style="background: rgba(255,255,255,0.9);">
                             <i class="fas fa-glass-cheers" aria-hidden="true"></i>
                         </div>
-                        <h3>All Types of Event Decoration</h3>
-                        <p>From corporate events to family gatherings, we handle all types of event decorations with creativity and professionalism.</p>
+                        <h3 style="color: #fff;">All Types of Event Decoration</h3>
+                        <p style="color: rgba(255,255,255,0.9);">From corporate events to family gatherings, we handle all types of event decorations with creativity and professionalism.</p>
                     </a>
                 </div>
                 <div class="services-cta">
@@ -230,6 +241,7 @@
                             <div>
                                 <h4>Address</h4>
                                 <p>123 Flower Street, City Center, Your City</p>
+                                <a href="https://maps.google.com/?q=123+Flower+Street+City+Center" target="_blank" rel="noopener noreferrer" class="btn btn-small" style="margin-top: 10px; display: inline-block; padding: 8px 18px; font-size: 0.85rem;">Get Directions</a>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -237,6 +249,7 @@
                             <div>
                                 <h4>Phone</h4>
                                 <p>+91 98765 43210</p>
+                                <a href="tel:+919876543210" style="margin-top: 8px; display: inline-block; color: var(--primary); font-weight: 500; text-decoration: none;">Call Now</a>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -244,6 +257,7 @@
                             <div>
                                 <h4>Email</h4>
                                 <p>info@saiflower.com</p>
+                                <a href="mailto:info@saiflower.com" style="margin-top: 8px; display: inline-block; color: var(--primary); font-weight: 500; text-decoration: none;">Send Email</a>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -255,22 +269,6 @@
                             </div>
                         </div>
                     </div>
-                    <form class="contact-form" action="#" method="POST">
-                        <input type="text" name="name" placeholder="Your Name" required aria-required="true">
-                        <input type="email" name="email" placeholder="Your Email" required aria-required="true">
-                        <input type="tel" name="phone" placeholder="Your Phone">
-                        <select name="service" required aria-required="true">
-                            <option value="" disabled selected>Select Service</option>
-                            <option value="wedding">Wedding Decoration</option>
-                            <option value="welcome">Welcome Decoration</option>
-                            <option value="puja">Bookeh</option>
-                            <option value="car">Car Decoration</option>
-                            <option value="birthday">Birthday & Party Decoration</option>
-                            <option value="allevent">All Types of Event Decoration</option>
-                        </select>
-                        <textarea name="message" placeholder="Your Message" rows="5" required aria-required="true"></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
                 </div>
             </div>
         </section>
@@ -292,11 +290,13 @@
                     <img src="wedding decoration/wedding1.jpg" alt="Wedding flowers arrangement" loading="lazy">
                     <img src="wedding decoration/wedding2.jpg" alt="Mandap decoration with flowers" loading="lazy">
                     <img src="wedding decoration/wedding3.jpg" alt="Bridal bouquet" loading="lazy">
-                </div>
-                <div class="event-gallery" style="margin-top: 0;">
                     <img src="wedding decoration/wedding5.jpg" alt="Wedding setup with floral decor" loading="lazy">
                     <img src="wedding decoration/wedding6.jpg" alt="Floral decoration at wedding venue" loading="lazy">
                     <img src="wedding decoration/wedding7.jpg" alt="Wedding decor with flowers" loading="lazy">
+                    <img src="wedding decoration/wedding8.jpg" alt="Wedding decoration arrangement" loading="lazy">
+                    <img src="wedding decoration/wedding9.jpg" alt="Wedding floral setup" loading="lazy">
+                    <img src="wedding decoration/wedding10.jpg" alt="Wedding decoration display" loading="lazy">
+                    <img src="wedding decoration/wedding11.jpg" alt="Wedding flower decor" loading="lazy">
                 </div>
                 <h2>Our Wedding Services Include</h2>
                 <p>✨ Bridal Bouquet & Groom Boutonniere<br>
@@ -319,7 +319,7 @@
 
     <!-- ===== WELCOME PAGE SECTION ===== -->
     <div id="event-welcome" class="page-section">
-        <section class="event-hero" style="background: linear-gradient(135deg, rgba(233,30,99,.2), rgba(0,0,0,.5)), url('https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=1920&q=80') center/cover no-repeat;" aria-label="Welcome decoration hero">
+        <section class="event-hero" style="background: linear-gradient(135deg, rgba(233,30,99,.2), rgba(0,0,0,.5)), url('Welcome decoration/welcome1.webp') center/cover no-repeat;" aria-label="Welcome decoration hero">
             <div class="container">
                 <h1>Welcome Decoration</h1>
                 <p>Warm and inviting floral arrangements for your guests</p>
@@ -330,9 +330,17 @@
                 <h2 id="welcome-title">Beautiful Welcome Decorations</h2>
                 <p>First impressions matter, and our welcome decorations ensure your guests feel special from the moment they arrive. We create stunning entrance setups, reception areas, and greeting spaces that set the perfect tone for your event.</p>
                 <div class="event-gallery">
-                    <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=400&q=80" alt="Welcome decoration with flowers" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?w=400&q=80" alt="Reception flower arrangement" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&q=80" alt="Entrance decoration display" loading="lazy">
+                    <img src="Welcome decoration/welcome1.webp" alt="Welcome decoration 1" loading="lazy">
+                    <img src="Welcome decoration/welcome2.jpg" alt="Welcome decoration 2" loading="lazy">
+                    <img src="Welcome decoration/welcome3.jpg" alt="Welcome decoration 3" loading="lazy">
+                    <img src="Welcome decoration/welcome3.webp" alt="Welcome decoration 4" loading="lazy">
+                    <img src="Welcome decoration/welcome4.webp" alt="Welcome decoration 5" loading="lazy">
+                    <img src="Welcome decoration/welcome5.jpg" alt="Welcome decoration 6" loading="lazy">
+                    <img src="Welcome decoration/welcome6.jpg" alt="Welcome decoration 7" loading="lazy">
+                    <img src="Welcome decoration/welcome7.webp" alt="Welcome decoration 8" loading="lazy">
+                    <img src="Welcome decoration/welcome8.jpg" alt="Welcome decoration 9" loading="lazy">
+                    <img src="Welcome decoration/welcome9.jpg" alt="Welcome decoration 10" loading="lazy">
+                    <img src="Welcome decoration/welcome10.jpg" alt="Welcome decoration 11" loading="lazy">
                 </div>
                 <h2>Our Welcome Decoration Services</h2>
                 <p>✨ Entrance Gate Decor<br>
@@ -355,7 +363,7 @@
 
     <!-- ===== PUJA PAGE SECTION ===== -->
     <div id="event-puja" class="page-section">
-        <section class="event-hero" style="background: linear-gradient(135deg, rgba(233,30,99,.2), rgba(0,0,0,.5)), url('https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?w=1920&q=80') center/cover no-repeat;" aria-label="Puja decoration hero">
+        <section class="event-hero" style="background: linear-gradient(135deg, rgba(233,30,99,.2), rgba(0,0,0,.5)), url('Bookeh/bookeh1.jpg') center/cover no-repeat;" aria-label="Bookeh decoration hero">
             <div class="container">
                 <h1>Bookeh</h1>
                 <p>Sacred and traditional floral arrangements for spiritual ceremonies</p>
@@ -366,9 +374,22 @@
                 <h2 id="puja-title">Traditional Bookeh Decorations</h2>
                 <p>Enhance your spiritual ceremonies with our traditional and sacred flower arrangements. We understand the significance of religious events and create decorations that honor traditions while adding beauty to your sacred space.</p>
                 <div class="event-gallery">
-                    <img src="https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?w=400&q=80" alt="Puja decoration with flowers" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=400&q=80" alt="Religious flower arrangement" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&q=80" alt="Temple decoration display" loading="lazy">
+                    <img src="Bookeh/bookeh1.jpg" alt="Bookeh decoration 1" loading="lazy">
+                    <img src="Bookeh/bookeh2.jpg" alt="Bookeh decoration 2" loading="lazy">
+                    <img src="Bookeh/bookeh3.jpg" alt="Bookeh decoration 3" loading="lazy">
+                    <img src="Bookeh/bookeh4.jpg" alt="Bookeh decoration 4" loading="lazy">
+                    <img src="Bookeh/bookeh5.jpg" alt="Bookeh decoration 5" loading="lazy">
+                    <img src="Bookeh/bookeh6.jpg" alt="Bookeh decoration 6" loading="lazy">
+                    <img src="Bookeh/bookeh7.jpg" alt="Bookeh decoration 7" loading="lazy">
+                    <img src="Bookeh/bookeh8.jpg" alt="Bookeh decoration 8" loading="lazy">
+                    <img src="Bookeh/bookeh9.jpg" alt="Bookeh decoration 9" loading="lazy">
+                    <img src="Bookeh/bookeh10.jpg" alt="Bookeh decoration 10" loading="lazy">
+                    <img src="Bookeh/bookeh11.jpg" alt="Bookeh decoration 11" loading="lazy">
+                    <img src="Bookeh/bookeh12.jpg" alt="Bookeh decoration 12" loading="lazy">
+                    <img src="Bookeh/bookeh13.jpg" alt="Bookeh decoration 13" loading="lazy">
+                    <img src="Bookeh/bookeh14.jpg" alt="Bookeh decoration 14" loading="lazy">
+                    <img src="Bookeh/bookeh15.jpg" alt="Bookeh decoration 15" loading="lazy">
+                    <img src="Bookeh/bookeh16.jpg" alt="Bookeh decoration 16" loading="lazy">
                 </div>
                 <h2>Our Bookeh Services</h2>
                 <p>✨ Mandap & Altar Decoration<br>
@@ -405,6 +426,7 @@
                     <img src="car decoration/car1.jpg" alt="Car decoration with flowers" loading="lazy">
                     <img src="car decoration/car2.jpg" alt="Wedding car flower arrangement" loading="lazy">
                     <img src="car decoration/car3.jpg" alt="Floral car decoration display" loading="lazy">
+                    <img src="car decoration/car4.jpg" alt="Car floral decoration" loading="lazy">
                 </div>
                 <h2>Our Car Decoration Services</h2>
                 <p>✨ Wedding Car Decoration<br>
@@ -425,45 +447,9 @@
         </section>
     </div>
 
-    <!-- ===== BIRTHDAY PAGE SECTION ===== -->
-    <div id="event-birthday" class="page-section">
-        <section class="event-hero" style="background: linear-gradient(135deg, rgba(233,30,99,.2), rgba(0,0,0,.5)), url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1920&q=80') center/cover no-repeat;" aria-label="Birthday decoration hero">
-            <div class="container">
-                <h1>Birthday & Party Decoration</h1>
-                <p>Celebrate with vibrant and joyful floral decor</p>
-            </div>
-        </section>
-        <section class="event-detail" id="main-content" aria-labelledby="birthday-title">
-            <div class="container">
-                <h2 id="birthday-title">Fun & Vibrant Party Decorations</h2>
-                <p>Make your birthday or party unforgettable with our colorful and creative flower decorations. Whether it's a milestone birthday, a children's party, or any celebration, we create lively and joyful atmospheres that your guests will love.</p>
-                <div class="event-gallery">
-                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&q=80" alt="Birthday decoration with flowers" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=400&q=80" alt="Party flower arrangement" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80" alt="Celebration decoration display" loading="lazy">
-                </div>
-                <h2>Our Birthday & Party Services</h2>
-                <p>✨ Balloon & Flower Combinations<br>
-                ✨ Themed Birthday Decor<br>
-                ✨ Cake Table Setup<br>
-                ✨ Photo Booth with Flowers<br>
-                ✨ Kids Party Decor<br>
-                ✨ Surprise Setup<br>
-                ✨ Anniversary Celebration Decor</p>
-                <p>We work with you to create a personalized theme and color scheme that matches your party vision and makes your celebration truly special.</p>
-                <div class="event-cta">
-                    <h3>Book Birthday Decoration</h3>
-                    <p>Let us make your celebration bright, colorful, and unforgettable.</p>
-                    <a href="/#contact" class="btn">Contact Us Now</a>
-                </div>
-                <a href="/#events" class="back-link"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back to All Decorations</a>
-            </div>
-        </section>
-    </div>
-
     <!-- ===== ALL EVENTS PAGE SECTION ===== -->
     <div id="event-allevent" class="page-section">
-        <section class="event-hero" style="background: linear-gradient(135deg, rgba(233,30,99,.2), rgba(0,0,0,.5)), url('https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=1920&q=80') center/cover no-repeat;" aria-label="All events hero">
+        <section class="event-hero" style="background: linear-gradient(135deg, rgba(233,30,99,.2), rgba(0,0,0,.5)), url('wedding decoration/wedding1.jpg') center/cover no-repeat;" aria-label="All events hero">
             <div class="container">
                 <h1>All Event Decorations</h1>
                 <p>Complete floral solutions for every occasion</p>
@@ -473,18 +459,70 @@
             <div class="container">
                 <h2 id="allevent-title">Comprehensive Event Decoration Services</h2>
                 <p>At Sai Flower, we handle all types of event decorations with creativity, professionalism, and attention to detail. From corporate events to family gatherings, from intimate celebrations to grand functions, our team has the expertise to transform any venue into a stunning floral paradise.</p>
+
+                <h3 style="margin-top: 40px; color: var(--primary);">💍 Wedding Decoration</h3>
                 <div class="event-gallery">
-                    <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=400&q=80" alt="Event decoration with flowers" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?w=400&q=80" alt="Decor setup for events" loading="lazy">
-                    <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=400&q=80" alt="Flower arrangement for events" loading="lazy">
+                    <img src="wedding decoration/wedding1.jpg" alt="Wedding decoration" loading="lazy">
+                    <img src="wedding decoration/wedding2.jpg" alt="Wedding decoration" loading="lazy">
+                    <img src="wedding decoration/wedding3.jpg" alt="Wedding decoration" loading="lazy">
+                    <img src="wedding decoration/wedding5.jpg" alt="Wedding decoration" loading="lazy">
+                    <img src="wedding decoration/wedding6.jpg" alt="Wedding decoration" loading="lazy">
+                    <img src="wedding decoration/wedding7.jpg" alt="Wedding decoration" loading="lazy">
+                    <img src="wedding decoration/wedding8.jpg" alt="Wedding decoration" loading="lazy">
+                    <img src="wedding decoration/wedding9.jpg" alt="Wedding decoration" loading="lazy">
+                    <img src="wedding decoration/wedding10.jpg" alt="Wedding decoration" loading="lazy">
+                    <img src="wedding decoration/wedding11.jpg" alt="Wedding decoration" loading="lazy">
                 </div>
-                <h2>Decorations We Offer</h2>
+
+                <h3 style="margin-top: 40px; color: var(--primary);">🤝 Welcome Decoration</h3>
+                <div class="event-gallery">
+                    <img src="Welcome decoration/welcome1.webp" alt="Welcome decoration" loading="lazy">
+                    <img src="Welcome decoration/welcome2.jpg" alt="Welcome decoration" loading="lazy">
+                    <img src="Welcome decoration/welcome3.jpg" alt="Welcome decoration" loading="lazy">
+                    <img src="Welcome decoration/welcome3.webp" alt="Welcome decoration" loading="lazy">
+                    <img src="Welcome decoration/welcome4.webp" alt="Welcome decoration" loading="lazy">
+                    <img src="Welcome decoration/welcome5.jpg" alt="Welcome decoration" loading="lazy">
+                    <img src="Welcome decoration/welcome6.jpg" alt="Welcome decoration" loading="lazy">
+                    <img src="Welcome decoration/welcome7.webp" alt="Welcome decoration" loading="lazy">
+                    <img src="Welcome decoration/welcome8.jpg" alt="Welcome decoration" loading="lazy">
+                    <img src="Welcome decoration/welcome9.jpg" alt="Welcome decoration" loading="lazy">
+                    <img src="Welcome decoration/welcome10.jpg" alt="Welcome decoration" loading="lazy">
+                </div>
+
+                <h3 style="margin-top: 40px; color: var(--primary);">🪔 Bookeh</h3>
+                <div class="event-gallery">
+                    <img src="Bookeh/bookeh1.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh2.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh3.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh4.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh5.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh6.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh7.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh8.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh9.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh10.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh11.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh12.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh13.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh14.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh15.jpg" alt="Bookeh decoration" loading="lazy">
+                    <img src="Bookeh/bookeh16.jpg" alt="Bookeh decoration" loading="lazy">
+                </div>
+
+                <h3 style="margin-top: 40px; color: var(--primary);">🚗 Car Decoration</h3>
+                <div class="event-gallery">
+                    <img src="car decoration/car1.jpg" alt="Car decoration" loading="lazy">
+                    <img src="car decoration/car2.jpg" alt="Car decoration" loading="lazy">
+                    <img src="car decoration/car3.jpg" alt="Car decoration" loading="lazy">
+                    <img src="car decoration/car4.jpg" alt="Car decoration" loading="lazy">
+                </div>
+
+                <h2 style="margin-top: 50px;">Decorations We Offer</h2>
                 <div class="events-list">
                     <a href="/wedding"><h4>💍 Wedding Decoration</h4><p>Elegant bridal & mandap decor</p></a>
                     <a href="/welcome"><h4>🤝 Welcome Decoration</h4><p>Warm entrance & reception setups</p></a>
                     <a href="/puja"><h4>🪔 Bookeh</h4><p>Sacred & traditional arrangements</p></a>
                     <a href="/car"><h4>🚗 Car Decoration</h4><p>Beautiful floral car decor</p></a>
-                    <a href="/birthday"><h4>🎂 Birthday & Party</h4><p>Fun & vibrant celebrations</p></a>
                     <a href="/allevent"><h4>🏢 Corporate Events</h4><p>Professional & elegant decor</p></a>
                 </div>
                 <p>No matter the occasion, we bring your vision to life with fresh flowers, creative designs, and impeccable service. Our team handles everything from concept to execution, ensuring a stress-free experience for you.</p>
@@ -531,7 +569,6 @@
                         <li><a href="/welcome">Welcome Decoration</a></li>
                         <li><a href="/puja">Bookeh</a></li>
                         <li><a href="/car">Car Decoration</a></li>
-                        <li><a href="/birthday">Birthday Decoration</a></li>
                         <li><a href="/allevent">All Decorations</a></li>
                     </ul>
                 </div>
