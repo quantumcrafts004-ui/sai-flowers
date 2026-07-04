@@ -137,17 +137,55 @@
         if (!href) return;
 
         // Only handle internal links
-        if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#')) {
-            // Handle hash links for same-page scrolling
-            if (href.startsWith('#') && currentSection === 'home') {
-                e.preventDefault();
+        if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+            return;
+        }
+
+        // Handle hash links
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            if (currentSection === 'home') {
+                // Already on home page, just scroll
                 const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth' });
                 }
-                return;
+            } else {
+                // Navigate to home page first, then scroll after render
+                navigateTo('/');
+                setTimeout(function() {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
             }
             return;
+        }
+
+        // Handle hash-absolute links like /#contact
+        if (href.includes('#') && href.startsWith('/')) {
+            const parts = href.split('#');
+            const path = parts[0];
+            const hash = parts[1];
+            if (path === '/' || path === '') {
+                e.preventDefault();
+                if (currentSection === 'home') {
+                    const target = document.getElementById(hash);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else {
+                    navigateTo('/');
+                    setTimeout(function() {
+                        const target = document.getElementById(hash);
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }, 100);
+                }
+                return;
+            }
         }
 
         // Handle internal navigation
